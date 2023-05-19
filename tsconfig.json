@@ -19,10 +19,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "typeRoots": [
-      "./node_module/@types",
-      "./src/types"
-    ],
+    "suppressImplicitAnyIndexErrors": true
   },
   "include": [
     "src"
