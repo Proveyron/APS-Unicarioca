@@ -8,12 +8,6 @@ import {
 } from 'firebase/auth';
 
 const UserContext = createContext({})
-//aaaaa
-interface currentUser {
-    email: string;
-    password: string;
-
-}
 
 const UserProvider = ({ children }) => {
 

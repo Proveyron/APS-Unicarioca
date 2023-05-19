@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import './style.css'
 
-const content: string = '0'
-
 export default function Card({ content }) {
 
     const [isOpened, setIsOpened] = useState(false)
