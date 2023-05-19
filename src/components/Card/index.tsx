@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './style.css'
 
-const content: string
+const content: string = '0'
 
 export default function Card({ content }) {
 
