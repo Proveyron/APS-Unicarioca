@@ -5,7 +5,9 @@ import { UserContext } from '../../context/user'
 
 const Login = () => {
 
-    const { user, signIn, loading } = useContext(UserContext)
+    const { user: string } = useContext(UserContext)
+    const { signIn: boolean } = useContext(UserContext)
+    const { loading: int } = useContext(UserContext)
     const navigate = useNavigate();
 
     useEffect(() => {
