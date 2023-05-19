@@ -8,6 +8,8 @@ import firebaseApp from '../../services/firebase'
 import { getFirestore, addDoc, collection, getDocs, onSnapshot, query } from 'firebase/firestore'
 
 const Dashboard = () => {
+    signOut: any = {};
+    user: any = {};
 
     const { signOut, user } = useContext(UserContext)
 
