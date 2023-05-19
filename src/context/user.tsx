@@ -9,6 +9,12 @@ import {
 
 const UserContext = createContext({})
 
+interface currentUser {
+    email: string;
+    password: string;
+
+}
+
 const UserProvider = ({ children }) => {
 
     const auth = getAuth();
