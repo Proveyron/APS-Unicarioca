@@ -15,6 +15,6 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_APS_DESENVOLVIMENTO_WEB }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_APS_UNICARIOCA_5D83E }}'
           channelId: live
-          projectId: aps-desenvolvimento-web
+          projectId: aps-unicarioca-5d83e
