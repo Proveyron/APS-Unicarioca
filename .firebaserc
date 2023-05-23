@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "aps-unicarioca-3942f"
-  }
+    "default": "aps-unicarioca-3942f",
+    "production": "aps-unicarioca-3942f"
+  },
+  "targets": {},
+  "etags": {}
 }
