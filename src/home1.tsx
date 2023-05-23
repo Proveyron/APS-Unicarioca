@@ -1,10 +1,11 @@
-import { Container, Typography } from '@mui/material';
+import { Button, Container, Typography } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { pink } from '@mui/material/colors';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
-import Button from '@mui/material/Button';
+import Card1 from './Card2.tsx';
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyAMgCgAIlUUAsCZEzmGdEaimxll6uEtHjs",
@@ -23,10 +24,8 @@ const theme = createTheme({
     }
 });
 
-
-
-
 const App = () => {
+
 
     const handleLogout = async () => {
         try {
@@ -50,6 +49,7 @@ const App = () => {
                     <Typography variant="h5" component="h1" align="center" gutterBottom>
                         Logado!
                     </Typography>
+                    <Card1 />
                     <Button
                         type="submit"
                         variant="contained"
