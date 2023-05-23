@@ -6,7 +6,17 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 
-// Custom Material-UI theme
+const firebaseConfig = {
+  apiKey: "AIzaSyAMgCgAIlUUAsCZEzmGdEaimxll6uEtHjs",
+  authDomain: "aps-unicarioca-3942f.firebaseapp.com",
+  projectId: "aps-unicarioca-3942f",
+  storageBucket: "aps-unicarioca-3942f.appspot.com",
+  messagingSenderId: "281920244507",
+  appId: "1:281920244507:web:e64c6ba84f57e3e0ffa1be"
+};
+
+firebase.initializeApp(firebaseConfig);
+
 const theme = createTheme({
   palette: {
     primary: pink
@@ -22,7 +32,7 @@ const Login: React.FC = () => {
     e.preventDefault();
     try {
       await firebase.auth().signInWithEmailAndPassword(email, password);
-      // Login successful, perform any necessary actions
+      console.log('Login successful, perform any necessary actions');
       setError('');
     } catch (error: any) {
       setError(error.message);
@@ -34,7 +44,17 @@ const Login: React.FC = () => {
       <Container maxWidth="xs">
         <div className="login">
           <Typography variant="h4" component="h1" align="center" gutterBottom>
+            APS Unicarioca
+          </Typography>
+          <Typography variant="h5" component="h1" align="center" gutterBottom>
+            Desenvolvimento de aplicaçoes WEB
+          </Typography>
+          <Typography variant="h5" component="h1" align="center" gutterBottom>
             Login
+          </Typography>
+          <Typography variant="h6" component="h5" align="center" gutterBottom>
+            <b>Login:</b> aps@unicarioca.teste<br></br>
+            <b>Senha:</b> aps@unicarioca
           </Typography>
           {error && <div className="error">{error}</div>}
           <form onSubmit={handleLogin}>
@@ -48,7 +68,7 @@ const Login: React.FC = () => {
               margin="normal"
             />
             <TextField
-              label="Password"
+              label="Senha"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -61,9 +81,12 @@ const Login: React.FC = () => {
               variant="contained"
               color="primary"
               fullWidth
+            // onClick={handleIndexPage}
             >
               Login
             </Button>
+
+
           </form>
         </div>
       </Container>
