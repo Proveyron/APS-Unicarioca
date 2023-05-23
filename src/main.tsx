@@ -14,11 +14,12 @@ const firebaseConfig = {
   messagingSenderId: "281920244507",
   appId: "1:281920244507:web:e64c6ba84f57e3e0ffa1be"
 };
-
 firebase.initializeApp(firebaseConfig);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Login />
   </React.StrictMode>,
-)
+);
+
+

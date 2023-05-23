@@ -5,6 +5,8 @@ import { pink } from '@mui/material/colors';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import ReactDOM from 'react-dom/client'
+import Home from './home1.tsx'
 
 const firebaseConfig = {
   apiKey: "AIzaSyAMgCgAIlUUAsCZEzmGdEaimxll6uEtHjs",
@@ -33,6 +35,7 @@ const Login: React.FC = () => {
     try {
       await firebase.auth().signInWithEmailAndPassword(email, password);
       console.log('Login successful, perform any necessary actions');
+      HomePage();
       setError('');
     } catch (error: any) {
       setError(error.message);
@@ -54,7 +57,7 @@ const Login: React.FC = () => {
           </Typography>
           <Typography variant="h6" component="h5" align="center" gutterBottom>
             <b>Login:</b> aps@unicarioca.teste<br></br>
-            <b>Senha:</b> aps@unicarioca
+            <b>Senha:</b> aps@unicarioca.teste
           </Typography>
           {error && <div className="error">{error}</div>}
           <form onSubmit={handleLogin}>
@@ -81,7 +84,6 @@ const Login: React.FC = () => {
               variant="contained"
               color="primary"
               fullWidth
-            // onClick={handleIndexPage}
             >
               Login
             </Button>
@@ -91,6 +93,14 @@ const Login: React.FC = () => {
         </div>
       </Container>
     </ThemeProvider>
+  );
+};
+
+function HomePage() {
+  ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+    <React.StrictMode>
+      <Home />
+    </React.StrictMode>,
   );
 };
 
