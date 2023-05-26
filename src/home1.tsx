@@ -6,7 +6,6 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import Card1 from './Card2.tsx';
 
-
 const firebaseConfig = {
     apiKey: "AIzaSyAMgCgAIlUUAsCZEzmGdEaimxll6uEtHjs",
     authDomain: "aps-unicarioca-3942f.firebaseapp.com",
@@ -15,7 +14,6 @@ const firebaseConfig = {
     messagingSenderId: "281920244507",
     appId: "1:281920244507:web:e64c6ba84f57e3e0ffa1be"
 };
-
 firebase.initializeApp(firebaseConfig);
 
 const theme = createTheme({
@@ -25,8 +23,6 @@ const theme = createTheme({
 });
 
 const App = () => {
-
-
     const handleLogout = async () => {
         try {
             await firebase.auth().signOut();
@@ -34,7 +30,7 @@ const App = () => {
         } catch (error) {
             console.error('Error logging out:', error);
         }
-    }
+    };
 
     return (
         <ThemeProvider theme={theme}>
@@ -44,7 +40,7 @@ const App = () => {
                         APS Unicarioca
                     </Typography>
                     <Typography variant="h5" component="h1" align="center" gutterBottom>
-                        Desenvolvimento de aplicaçoes WEB
+                        Desenvolvimento de aplicações WEB
                     </Typography>
                     <Typography variant="h5" component="h1" align="center" gutterBottom>
                         Logado!
@@ -63,9 +59,6 @@ const App = () => {
             </Container>
         </ThemeProvider>
     );
-
-
-
-
 };
+
 export default App;

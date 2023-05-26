@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
-
 import { Card, CardContent, Typography } from "@mui/material";
 
 interface Document {
@@ -20,12 +20,11 @@ const FirestoreDocuments: React.FC = () => {
             messagingSenderId: "281920244507",
             appId: "1:281920244507:web:e64c6ba84f57e3e0ffa1be"
         };
-
         firebase.initializeApp(firebaseConfig);
+
 
         const firestore = firebase.firestore();
 
-        // Fetch documents from Firestore
         const fetchDocuments = async () => {
             try {
                 const collectionRef = firestore.collection("animais");
@@ -45,12 +44,14 @@ const FirestoreDocuments: React.FC = () => {
     return (
         <div>
             {documents.map((document, index) => (
-                <Card key={index} sx={{
-                    marginBottom: "16px",
-                    backgroundColor: "#0083ff",
-                    color: "white",
-
-                }}>
+                <Card
+                    key={index}
+                    sx={{
+                        marginBottom: "16px",
+                        backgroundColor: "#0083ff",
+                        color: "white",
+                    }}
+                >
                     <CardContent sx={{ textAlign: "center" }}>
                         <Typography variant="h6" component="h2" sx={{ textTransform: "capitalize" }}>
                             {document.name}

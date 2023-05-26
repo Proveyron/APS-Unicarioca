@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom/client';
 import { TextField, Button, Container, Typography } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { pink } from '@mui/material/colors';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
-import ReactDOM from 'react-dom/client'
-import Home from './home1.tsx'
+import Home from './home1.tsx';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAMgCgAIlUUAsCZEzmGdEaimxll6uEtHjs",
@@ -16,7 +16,6 @@ const firebaseConfig = {
   messagingSenderId: "281920244507",
   appId: "1:281920244507:web:e64c6ba84f57e3e0ffa1be"
 };
-
 firebase.initializeApp(firebaseConfig);
 
 const theme = createTheme({
@@ -34,7 +33,6 @@ const Login: React.FC = () => {
     e.preventDefault();
     try {
       await firebase.auth().signInWithEmailAndPassword(email, password);
-      console.log('Login successful, perform any necessary actions');
       HomePage();
       setError('');
     } catch (error: any) {
@@ -50,14 +48,14 @@ const Login: React.FC = () => {
             APS Unicarioca
           </Typography>
           <Typography variant="h5" component="h1" align="center" gutterBottom>
-            Desenvolvimento de aplicaçoes WEB
+            Desenvolvimento de aplicações WEB
           </Typography>
           <Typography variant="h5" component="h1" align="center" gutterBottom>
             Login
           </Typography>
           <Typography variant="h6" component="h5" align="center" gutterBottom>
-            <b>Login:</b> aps@unicarioca.teste<br></br>
-            <b>Senha:</b> aps@unicarioca.teste
+            Login: aps@unicarioca.teste<br />
+            Senha: aps@unicarioca.teste
           </Typography>
           {error && <div className="error">{error}</div>}
           <form onSubmit={handleLogin}>
@@ -87,8 +85,6 @@ const Login: React.FC = () => {
             >
               Login
             </Button>
-
-
           </form>
         </div>
       </Container>
@@ -100,8 +96,8 @@ function HomePage() {
   ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>
       <Home />
-    </React.StrictMode>,
+    </React.StrictMode>
   );
-};
+}
 
 export default Login;
