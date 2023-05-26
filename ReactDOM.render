@@ -1,0 +1,14 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { ScoreProvider } from './ScoreContext';
+import ScoreDisplay from './ScoreDisplay';
+
+const App = () => {
+  return (
+    <ScoreProvider>
+      <ScoreDisplay />
+    </ScoreProvider>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById('root'));
